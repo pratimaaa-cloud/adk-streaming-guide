@@ -2,7 +2,7 @@
 
 Having established the foundational concepts of bidirectional streaming in Part 1, we now dive deep into the technical heart of ADK—the complete event handling architecture that transforms complex streaming challenges into simple, intuitive APIs. This part reveals how ADK's integrated streaming system eliminates the complexity of building real-time AI communication from scratch.
 
-You'll discover ADK's event-driven architecture that seamlessly coordinates message queuing, async processing, state management, and AI model integration. Rather than wrestling with WebSocket protocols, asyncio complexity, and AI model APIs separately, you'll see how ADK provides a unified streaming framework that handles the intricate orchestration automatically. By the end of this part, you'll understand why building streaming AI applications with ADK feels effortless compared to implementing these systems from scratch.
+You'll discover ADK's event-driven architecture that seamlessly coordinates message queuing, async processing, state management, and AI model integration. Rather than wrestling with WebSocket protocols, asyncio complexity, and AI model APIs separately, you'll see how ADK provides a unified streaming framework that handles the intricate orchestration automatically. By the end of this part, you'll understand why building streaming AI agent applications with ADK feels effortless compared to implementing these systems from scratch.
 
 ### Quick Demo (Recommended)
 
@@ -30,9 +30,9 @@ These are handled by the framework; you primarily work with `LiveRequestQueue`, 
 
 ADK's streaming architecture represents a complete solution to the challenges that would otherwise require months of custom development. Instead of building message queuing, async coordination, state management, and AI model integration separately, ADK provides an integrated event handling system that orchestrates all these components seamlessly.
 
-### The Challenge of Building Streaming AI From Scratch
+### The Challenge of Building Streaming AI Agents From Scratch
 
-Implementing bidirectional streaming AI communication from scratch involves solving multiple complex problems simultaneously:
+Implementing bidirectional live agent streaming from scratch involves solving multiple complex problems simultaneously:
 
 **Message Management Complexity:**
 - Message queuing and ordering under concurrent access
@@ -41,12 +41,12 @@ Implementing bidirectional streaming AI communication from scratch involves solv
 
 **Event Processing Challenges:**
 - Coordinating multiple async generators and consumers
-- Managing backpressure when AI responses are slower than user input
+- Managing backpressure when agent responses are slower than user input
 - Handling interruptions and partial message states
 - Maintaining conversation context across streaming sessions
 
-**AI Model Integration Difficulties:**
-- Protocol translation between application events and AI model APIs
+**Model Integration Difficulties:**
+- Protocol translation between application events and model APIs
 - Managing streaming tokens vs. complete message semantics
 - Handling model-specific response formats and error conditions
 - Coordinating multimodal inputs (text, audio, video) with single model interface
@@ -102,7 +102,7 @@ graph TB
 
 The true measure of a framework isn't just what it enables—it's what it eliminates. ADK's value proposition becomes crystal clear when you compare the complexity of building bidirectional streaming from scratch versus using ADK's integrated solution. The difference isn't merely a matter of convenience; it's the difference between spending months building infrastructure versus focusing on your application's unique value from day one.
 
-**Instead of building this yourself:**
+**Building from scratch**
 
 ```python
 # Custom implementation (hundreds of lines)
@@ -122,7 +122,7 @@ class CustomStreamingSystem:
         # ... hundreds of lines of coordination code
 ```
 
-**You get this with ADK:**
+**Building with ADK**
 
 ```python
 # ADK integrated system (5 lines)
@@ -149,7 +149,7 @@ The integrated architecture delivers benefits that compound as your application 
 
 - **Production-Ready Reliability**: Battle-tested error handling, reconnection logic, and failure recovery come standard. These aren't features you need to build and debug yourself; they're baked into the framework's foundation, proven through real-world deployments.
 
-- **Seamless AI Integration**: Direct integration with Gemini Live API eliminates the need for protocol translation layers. ADK speaks the language of both your application and the AI model, handling the translation seamlessly so you can focus on conversational logic rather than protocol details.
+- **Seamless Live API Integration**: Direct integration with Gemini Live API eliminates the need for protocol translation layers. ADK speaks the language of both your application and the AI model, handling the translation seamlessly so you can focus on conversational logic rather than protocol details.
 
 - **Memory Efficient**: Streaming event processing prevents the memory accumulation issues common in custom implementations. Events are processed as they arrive and immediately released, maintaining constant memory usage regardless of conversation length.
 
@@ -174,7 +174,7 @@ While you can create `LiveRequest` objects directly, `LiveRequestQueue` provides
 
 **Text Content:**
 
-Text content represents the primary mode of structured communication between users and AI agents. This includes not just simple text messages, but also rich content with metadata, function call responses, and contextual information. The `Content` object uses a `parts` array structure that allows for complex message composition while maintaining semantic clarity.
+Text content represents the primary mode of structured communication between users and agents. This includes not just simple text messages, but also rich content with metadata, function call responses, and contextual information. The `Content` object uses a `parts` array structure that allows for complex message composition while maintaining semantic clarity.
 
 ```python
 # Convenience method (recommended)
